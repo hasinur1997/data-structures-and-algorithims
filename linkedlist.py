@@ -172,6 +172,26 @@ class LinkedList:
 
         return current_node.data
 
+    # Sort the list
+    def sort(self):
+        if self.head is None:
+            print("The list is empty")
+            return
+
+        current_node = self.head
+
+        while current_node is not None:
+            index = current_node.next
+
+            while index is not None:
+                if current_node.data > index.data:
+                    temp = current_node.data
+                    current_node.data = index.data
+                    index.data = temp
+
+                index = index.next
+            current_node = current_node.next
+
     # Find node using the value
     def find(self, item):
         if self.head is None:
