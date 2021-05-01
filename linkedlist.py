@@ -155,6 +155,23 @@ class LinkedList:
 
         return max_value
 
+    # Get the first node value
+    def first(self):
+        if self.head is None:
+            return None
+        return self.head.data
+
+    # Get the value of last node
+    def last(self):
+        if self.head is None:
+            return None
+
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+
+        return current_node.data
+
     # Find node using the value
     def find(self, item):
         if self.head is None:
