@@ -1,9 +1,4 @@
-# Class Node
-class Node:
-    # Initialize
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+from data_structure.linkedlist.node import Node
 
 
 # Class Linked List
