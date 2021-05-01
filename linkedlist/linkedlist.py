@@ -116,6 +116,23 @@ class LinkedList:
             temp = current_node.next.next
             current_node.next = temp
 
+    # Remove duplicate nodes from the list
+    def remove_duplicates(self):
+
+        if self.head is None:
+            return None
+
+        current_node = self.head
+        has = set()
+        has.add(self.head.data)
+
+        while current_node.next is not None:
+            if current_node.next.data in has:
+                current_node.next = current_node.next.next
+            else:
+                has.add(current_node.next.data)
+                current_node = current_node.next
+
     # Get total numbers of node of the list
     def count(self):
         return self.counter
