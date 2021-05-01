@@ -203,6 +203,41 @@ class LinkedList:
 
         return found_item
 
+    # Get the data at the respected position
+    def get(self, position):
+        if self.head is None:
+            return None
+
+        current = self.head
+        result = None
+        index = 1
+
+        while current is not None:
+            if index == position:
+                result = current
+            current = current.next
+            index = index + 1
+
+        return result.data
+
+    # Get the item from the position of the tail
+    def get_from_tail(self, position):
+        if self.head is None:
+            return None
+
+        counter = 0
+        current_node = self.head
+
+        while current_node is not None:
+            counter = counter + 1
+            current_node = current_node.next
+
+        current_node = self.head
+        for i in range(0, counter - position):
+            current_node = current_node.next
+
+        return current_node.data
+
     # Print the list
     def display(self):
         if self.head is None:
