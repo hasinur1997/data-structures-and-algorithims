@@ -125,6 +125,36 @@ class LinkedList:
     def count(self):
         return self.counter
 
+    # Get minimum value from the list
+    def min(self):
+        if self.head is None:
+            return None
+
+        current_node = self.head
+        min_value = current_node.data
+
+        while current_node is not None:
+            if current_node.data < min_value:
+                min_value = current_node.data
+            current_node = current_node.next
+
+        return min_value
+
+    # Get the maximum value from the list
+    def max(self):
+        if self.head is None:
+            return None
+
+        current_node = self.head
+        max_value = current_node.data
+
+        while current_node is not None:
+            if current_node.data > max_value:
+                max_value = current_node.data
+            current_node = current_node.next
+
+        return max_value
+
     # Find node using the value
     def find(self, item):
         if self.head is None:
@@ -151,12 +181,3 @@ class LinkedList:
             while current_node is not None:
                 print(current_node.data)
                 current_node = current_node.next
-
-
-my_list = LinkedList()
-
-my_list.append(10)
-my_list.append(70)
-my_list.append(80)
-my_list.append(50)
-my_list.display()
