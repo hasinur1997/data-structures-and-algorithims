@@ -270,6 +270,18 @@ class LinkedList:
 
         return current_node.data
 
+    # Merge two lists
+    def merge(self, head):
+        if self.head is None or head is None:
+            return None
+
+        current_node = self.head
+
+        while current_node.next is not None:
+            current_node = current_node.next
+
+        current_node.next = head
+
     # Reverse linked list
     def reverse(self):
         if self.head is None:
