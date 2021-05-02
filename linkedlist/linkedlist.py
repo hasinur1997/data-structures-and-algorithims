@@ -255,6 +255,24 @@ class LinkedList:
 
         return current_node.data
 
+    # Reverse linked list
+    def reverse(self):
+        if self.head is None:
+            return None
+
+        prev_node = None
+        current_node = self.head
+        next_node = self.head
+
+        while current_node is not None:
+            next_node = next_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+
+            current_node = next_node
+
+        self.head = prev_node
+
     # Print the list
     def display(self):
         if self.head is None:
