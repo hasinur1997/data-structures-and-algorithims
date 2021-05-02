@@ -137,6 +137,21 @@ class LinkedList:
     def count(self):
         return self.counter
 
+    # Count how many times an item is exists on list
+    def count_item(self, item):
+        if self.head is None:
+            return None
+
+        current_node = self.head
+        counter = 0
+
+        while current_node is not None:
+            if current_node.data == item:
+                counter = counter + 1
+            current_node = current_node.next
+
+        return counter
+
     # Get minimum value from the list
     def min(self):
         if self.head is None:
