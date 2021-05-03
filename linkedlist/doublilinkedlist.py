@@ -32,6 +32,21 @@ class DoublyLinkedList:
             new_node.next = temp
             self.head = new_node
 
+    # Insert an item to the appropriate location
+    def sorted_insert(self, item):
+        new_node = Node(item)
+        current_node = self.head
+
+        while current_node is not None:
+            if current_node.data >= item:
+                new_prev = current_node.prev
+                current_node.prev.next = new_node
+                new_node.next = current_node
+                new_node.prev = new_prev
+                return
+
+            current_node = current_node.next
+
     # Reverse doubly linked list
     def reverse(self):
         if self.head is None:
