@@ -310,3 +310,14 @@ class LinkedList:
             while current_node is not None:
                 print(current_node.data)
                 current_node = current_node.next
+
+    # Print the list recursively
+    def recursive_display(self, node='head'):
+        if 'head' == node:
+            node = self.head
+
+        if node is None:
+            return
+        print(node.data)
+
+        self.recursive_display(node.next)
