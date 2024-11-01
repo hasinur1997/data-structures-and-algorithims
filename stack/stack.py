@@ -1,30 +1,36 @@
+# Class Stack
 class Stack:
+    # Initialize Stack
     def __init__(self):
-        self.items = [None] * 5
-        self.size = -1
-        self.limit = 5
+        self.data = []
+        self.stack_max = 10
+        self.top = 0
 
+    # Add item at the top
     def push(self, item):
-        if self.is_full():
-            raise Exception("Stack overflow")
+        if self.top < self.stack_max:
+            self.data.insert(self.top, item)
+            self.top += 1
+        else:
+            print("Stack is full")
 
-        self.size += 1
-        self.items[self.size] = item
-
+    # Remove item from top of the stack
     def pop(self):
-        if self.is_empty():
-            raise Exception("Stack is empty")
+        item = None
+        if self.top == 0:
+            print("Stack is empty")
+            return
 
-        item = self.items[self.size]
-        self.size -= 1
+        self.top -= 1
+        item = self.data[self.top]
 
         return item
-    
-    def peek(self):
-        return self.items[self.size]
 
-    def is_empty(self):
-        return self.size < 0
+    # Display all item in stack
+    def print_stack(self):
+        if self.top == 0:
+            print("Stack is empty")
+            return
 
-    def is_full(self):
-        return self.size > self.limit
+        for i in range(self.top-1, 0-1, -1):
+            print(self.data[i])
