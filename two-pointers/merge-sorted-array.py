@@ -21,7 +21,6 @@ class Solution:
             p2 -= 1
             p -= 1
         
-        
 
 # Example usage:
 # nums1 = [1,2,3,0,0,0]
