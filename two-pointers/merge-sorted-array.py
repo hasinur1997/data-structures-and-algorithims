@@ -20,6 +20,8 @@ class Solution:
             nums1[p] = nums2[p2]
             p2 -= 1
             p -= 1
+        
+        
 
 # Example usage:
 # nums1 = [1,2,3,0,0,0]
