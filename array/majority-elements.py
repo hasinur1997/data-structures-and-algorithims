@@ -1,15 +1,19 @@
 def get_majority(nums):
-    counter = {}
-    n = len(nums) / 2
+    nums.sort()
+    return nums[len(nums) // 2]# Example usage:
+
+
+def get_majority_count(nums):
+    candidate = 0
+    count = 0
 
     for num in nums:
-        if num in counter:
-            counter[num] += 1
-        else:
-            counter[num] = 1
+        if count == 0:
+            candidate = num
+        
+        count += (1 if num == candidate else -1)
 
-        if counter[num] > n:
-            return num
+    return candidate
 
 
 numbers = [2,2,1,1,1,2,2]
